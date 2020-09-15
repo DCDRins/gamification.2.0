@@ -1,0 +1,26 @@
+$mobileWidth: 320px;
+$tabletWidth: 768px;
+$lowscreenWidth: 1920px;
+
+@mixin mobile {
+  @media  only screen and (max-width: #{$tabletWidth + 1px}) {
+    @content;
+  }
+}
+@mixin lowscreen {
+  @media  only screen and (min-width: #{$tabletWidth + 1px}) and (max-width: #{$lowscreenWidth - 1px}) {
+    @content;
+  }
+}
+
+@mixin font($font-family, $font-file, $fw: normal, $fs: normal) {
+  @font-face {
+    font-family: $font-family;
+    src: url($font-file + '.eot');
+    src: url($font-file + '.eot?#iefix') format('embedded-opentype'),
+      url($font-file + '.woff') format('woff'),
+      url($font-file + '.ttf') format('truetype');
+    font-weight: $fw;
+    font-style: $fs;
+  }
+}

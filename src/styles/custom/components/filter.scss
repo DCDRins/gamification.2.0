@@ -1,0 +1,157 @@
+.Sort {
+  z-index: z("background-layer")!important;
+}
+.Filter {
+  position: relative;
+  padding: 10px 5px 20px;
+  overflow: visible;
+  z-index: z("top-layer");
+  &--inline {
+    padding: unset;
+    height: 100%;
+    overflow: hidden;
+    padding-bottom: 75px;
+  }
+
+  &__container {
+    display: inline-block;
+    position: relative;
+    z-index: z("sub-layer");
+    &--inline {
+      display: block;
+      height: 100%;
+      overflow: auto;
+    }
+    .button {
+      &:hover + .Filter__body {
+        visibility: visible;
+        opacity: 1;
+        transition: $average;
+      }
+    }
+  }
+  &__header {
+    padding: 0 5px;
+    .button {
+      display: block;
+      max-width: unset;
+      text-align: center;
+    }
+    &--inline {
+      height: 20px;
+      margin: 10px 0;
+      width: 100%;
+      font-weight: 700;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+    }
+  }
+  &__body {
+    display: block;
+    position: absolute;
+    max-width: 250px;
+    min-width: 150px;
+    top: -10px;
+    left: -5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: $average;
+    background: white;
+    border-radius: $border-radius-average;
+    box-shadow: 0 0 6px -3px $dark;
+    &:hover {
+      visibility: visible;
+      opacity: 1;
+      transition: $average;
+    }
+    &::before {
+      content: '';
+      display: block;
+      position: relative;
+      height: 5px;
+      width: 100%;
+    }
+    &--inline {
+      position: relative;
+      left: 0;
+      top: 0;
+      opacity: 1;
+      visibility: visible;
+      box-shadow: none;
+      &::before {
+        content: none;
+      }
+      div {
+        padding: 5px 0;
+        font-weight: 700;
+        & > div {
+          padding: 5px 15px;
+        }
+      }
+    }
+  }
+  &__footer {
+    display: block;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    background: white;
+    z-index: z("main-layer");
+    .button {
+      display: block;
+      max-width: 100%;
+      padding: 10px;
+      border-top: 1px solid $light;
+    }
+  }
+  &__field {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    padding: 5px 0;
+    margin: 5px 0;
+    white-space: nowrap;
+    transition: $fast;
+    &:hover {
+      background: $light-violet;
+      transition: $fast;
+      & > * {
+        color: $violet;
+        transition: $fast;
+      }
+      .check svg {
+        stroke: $violet;
+      }
+    }
+    & > * {
+      user-select: none;
+      vertical-align: middle;
+      display: inline-block;
+      font-weight: 700;
+      transition: $fast;
+    }
+    &-name {
+      width: 70%;
+      font-size: 10pt;
+      padding: 0 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: $violet;
+    }
+    &-value {
+      padding: 0 10px;
+      min-width: 30%;
+      text-align: right;
+      &--inline {
+        min-width: 20%;
+        padding: unset;
+        text-align: center;
+        .check {
+          padding: 0;
+        }
+      }
+    }
+  }
+}

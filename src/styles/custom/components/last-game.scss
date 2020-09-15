@@ -1,0 +1,311 @@
+.Games{
+    position: relative;
+    &__container{
+        &__wrapper{
+            overflow: hidden;
+        }
+    }
+    &__Last {
+        position: relative;
+        display: block;
+        white-space: nowrap;
+        max-width: 1920px;
+        padding: unset!important;
+        // padding: 0 60px;
+        border-right: 60px solid transparent;
+        border-left: 60px solid transparent;
+        overflow: hidden;
+        @include mobile {
+            display: block;
+            margin: 15px 20px;
+            padding: unset;
+            border-width: 0;
+            overflow-x: hidden;
+            white-space: unset;
+        }
+        & > *{
+            white-space: nowrap;
+        }
+        &__container{
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            overflow-x: scroll;
+            width: auto;
+            max-width: 65%;
+            vertical-align: middle;
+            height: 170px;
+            padding: 0;
+            margin-top: 15px;
+            @include mobile {
+                margin-top: 25px;
+                display: block;
+                max-width: 100%;
+                border: none;
+              }
+        }
+        &::before{
+            content: 'Статистика по последней игре';
+            display: block;
+            position: relative;
+            font-size: 16pt;
+            font-weight: 700;
+            display: block;
+        }
+        .Games__container__wrapper__last{
+            padding-right: 200px;
+            @include mobile {
+                width: auto;
+            }
+        }
+        .game__last{
+            display: inline-block;
+            position: relative;
+            max-width: 430px;
+            width: 100%;
+            height: 150px;
+            border-radius: $border-radius-large;
+            margin-right: 60px;
+            transition: ease-in-out 0.1s;
+            overflow: hidden;
+            vertical-align: middle;
+            .game__tile{
+                min-height: unset;
+                height: 150px;
+                background-size: cover;
+                background-repeat: no-repeat;     
+                .game__name{
+                    font-weight: 600;
+                }
+                .game__image{
+                    transform: unset;
+                }
+                & > *{
+                    color: white!important;
+                }
+            }
+            @include mobile {
+                margin: unset;
+                margin: 20px auto 0px;
+            }
+        }
+        .stat__ln{
+            position: relative;
+            height: 100%;
+            display: inline-block;
+            margin-right: 50px;
+            vertical-align: top;
+            padding-right: 30px;
+            @include mobile {
+                margin-right: 25px;
+                padding-right: unset;
+            }
+            .stat{
+                height: 160px;
+                margin-bottom: 5px;
+                text-align: left;
+                display: inline-block;
+                &__title{
+                    display: inline;
+                    & > p{
+                        display: inline-block;
+                        color: $dark;
+                        font-size: 14pt;
+                        margin-right: 20px;
+                    }
+                    &__counter{
+                        position: relative;
+                        display: inline-block;
+                        background: $light-violet;
+                        color: $violet!important;
+                        padding: 2px 20px;
+                        border-radius: $border-radius-large;
+                    }
+                }
+                &__bar__wrapper{
+                    margin-top: 15px;
+                    background: gray;
+                    position: relative;
+                    height: 45px;
+                    width: 350px;
+                    border-radius: $border-radius-large;
+                    position: relative;
+                    overflow: hidden;
+                    .stat__bar:nth-child(1){
+                        background: $violet;
+                    }
+                    .stat__bar:nth-child(2){
+                        background: #FF84A7;
+                    }
+                     .stat__bar:nth-child(3){
+                        background: #FFB8AE;
+                    }
+                     .stat__bar:nth-child(4){
+                        background: #ADE4FD;
+                    }
+                    .stat__bar:nth-child(5){
+                        background: #7DFFB5;
+                    }
+                    .stat__bar:nth-child(6){
+                        background: #003943;
+                    }
+                    .stat__bar{
+                        position: relative;
+                        display: inline-block;
+                        height: 100%;
+                        text-align: center;
+                        &>p{
+                            position: relative;
+                            top: 21%;
+                            font-size: 18pt;
+                        }
+                    }
+                    @include mobile {
+                        width: 85vw;
+                    }
+                }
+                &__info{
+                    display: inline-block;
+                    margin-right: 30px;
+                    margin-bottom: 15px;
+                    &__wrapper{
+                        margin-top: 15px;
+                        position: relative;
+                        display: block;
+                        height: 20px;
+                        width: auto;
+                        white-space: pre-wrap;
+                        max-width: 40vw;
+                        &>:nth-child(1){
+                            .colored__circle{
+                                background: $violet;
+                            }
+                            .stat__info__name{
+                                color: $violet;
+                            }
+                        }
+                        &>:nth-child(2){
+                            .colored__circle{
+                                background: #FF84A7;
+                            }
+                            .stat__info__name{
+                                color: #FF84A7;
+                            }
+                        }
+                        &>:nth-child(3){
+                            .colored__circle{
+                                background: #FFB8AE;
+                            }
+                            .stat__info__name{
+                                color: #FFB8AE;
+                            }
+                        }
+                        &>:nth-child(4){
+                            .colored__circle{
+                                background: #ADE4FD;
+                            }
+                            .stat__info__name{
+                                color: #ADE4FD;
+                            }
+                        }
+                        &>:nth-child(5){
+                            .colored__circle{
+                                background: #7DFFB5;
+                            }
+                            .stat__info__name{
+                                color: #7DFFB5;
+                            }
+                        }
+                        &>:nth-child(6){
+                            .colored__circle{
+                                background: #003943;
+                            }
+                            .stat__info__name{
+                                color: #003943;
+                            }
+                        }
+                        @include mobile {
+                            max-width: 90vw;
+                        }
+                    }
+                    &__name{
+                        position: relative;
+                        display: inline-block;
+                        top: -2px;
+                    }
+                    .colored__circle{
+                        margin-right: 13px;
+                        height: 15px;
+                        width: 15px;
+                        position: relative;
+                        display: inline-block;
+                        border-radius: 100%;
+                    }
+                }
+                &__main{
+                    padding-right: 30px;
+                    width: 100%;
+                    .stat__status{
+                        margin-top: 17px;
+                        &__pointer{
+                            position: relative;
+                            display: inline-block;
+                            height: 30px;
+                            width: 30px;
+                            background: $green;
+                            border-radius: 100%;
+                            margin-right: 20px;
+                            top: 8px;
+                        }
+                        &__name{
+                            display: inline-block;
+                            font-size: 13pt;
+                            color: $dark;
+                        }
+                    }
+                    .stat__date{
+                        position: relative;
+                        display: block;
+                        border-radius: 5px;
+                        height: 25px;
+                        margin-top: 20px;
+                        &>p{
+                            color: $dark;
+                            display: inline-block;
+                            font-weight: 500;
+                            font-size: 13pt;
+                        }
+                        &>span{
+                            position: relative;
+                            display: inline-block;
+                            height: 2px;
+                            width: 14px;
+                            top: -5px;
+                            opacity: 0.7;
+                            margin: 0px 15px;
+                            background: $dark;
+                        }
+                    }
+                    
+                }
+                @include mobile {
+                    white-space: pre-wrap;
+                }
+            }
+        }
+
+        
+        .Games__scroller[type=backward]{
+            left: 440px;
+            @include mobile {
+                left: 10px;
+            }
+        }
+        .Games__scroller[type=forward]{
+            right: 5px;
+            @include mobile {
+                left: 10px;
+            }
+        }
+    }
+}

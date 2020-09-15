@@ -1,0 +1,19 @@
+.Timer {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 100px 30px;
+  opacity: .5;
+  font-size: 24pt;
+  font-weight: 300;
+  visibility: visible;
+  z-index: z("supertop-layer");
+  animation: 1s zoomInDown forwards;
+  @include mobile {
+    margin: 5px 20px;
+  }
+  &--white {
+    color: white;
+  }
+}
